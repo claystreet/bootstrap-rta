@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Bootstrap Rich TextArea (RTA) Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap-2.3.1.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive-2.3.1.min.css">
+    <link rel="stylesheet" href="css/bootstrap-rta-1.0.0.min.css">
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/bootstrap-ie7buttonfix.css"><![endif]-->
+    <!--[if IE 8]><link rel="stylesheet" href="css/bootstrap-ie8buttonfix.css"><![endif]-->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <style>
+        #pageContainer {
+        }
+        textarea, .demo-help {
+            width: 400px;
+        }
+        #hiddenContent, .demo-help {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="pageContainer" class="container">
+    <h3>Bootstrap Rich TextArea (RTA) Demo</h3>
+    <div id="formContainer">
+    
+    <!-- *********************************************************** -->
+    <!-- A typical bootstrap form... with multiple textarea fields -->
+    <form class="form-horizontal" name="steform" id="steform" method="GET" action="#">
+        <div class="control-group">
+            <label class="control-label" for="ta_def">Default Buttons</label>
+            <div class="controls">
+                <textarea rows="6" cols="60" class="rta" id="ta_def" name="ta_def" placeholder="Default Buttons"></textarea>
+            </div> <!-- controls -->
+        </div> <!-- control-group -->
+        <div class="control-group">
+            <label class="control-label" for="ta_twoway">Two Way Editing</label>
+            <div class="controls">
+                <textarea rows="6" cols="60" data-rta-twoway="true" class="rta" id="ta_twoway" name="ta_twoway" placeholder="Two Way Editing"></textarea>
+            </div> <!-- controls -->
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="ta_html">HTML Assigned Buttons</label>
+            <div class="controls">
+                <textarea rows="6" cols="60" data-rta="bold italic, ul ol" class="rta" id="ta_html" name="ta_html" placeholder="HTML Assigned Buttons"></textarea>
+            </div> <!-- controls -->
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="ta_allbtn">All Available Buttons</label>
+            <div class="controls">
+                <textarea rows="6" cols="60" class="rta" id="ta_allbtn" name="ta_allbtn" placeholder="All Available Buttons"></textarea>
+            </div> <!-- controls -->
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="ta_small">Larger Buttons</label>
+            <div class="controls">
+                <textarea rows="6" cols="60" class="rta" id="ta_small" name="ta_small" placeholder="Larger Buttons"></textarea>
+            </div> <!-- controls -->
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="ta_plain">Plain TextArea</label>
+            <div class="controls">
+                <textarea rows="6" cols="60" id="ta_plain" name="ta_plain" placeholder="Plain TextArea"></textarea>
+            </div> <!-- controls -->
+        </div>
+    </form>
+    
+    <!-- End of the Bootstrap form -->
+    <!-- *********************************************************** -->
+    
+    </div> <!-- formContainer -->
+
+<p>The MIT Licensed code is available at Github: <a href="">Bootstrap RTA Code</a></p>
+<p>Copyright &copy; 2013 <a href="http://www.claystreet.com">Clay Street Online LLC</a>.  All Rights Reserved.</p>
+
+</div> <!-- pageContainer -->
+
+
+<!---********** This hiddenContent section contains "info" text for this demo page, developers can ignore this section ********** -->
+<div id="hiddenContent">
+    
+    <div id="info_def">
+        <div class="info-block">
+            <button class="btn btn-small help-button"><i class="icon-info-sign"></i></button>
+            <div class="demo-help">
+                <p>This RTA shows the default button set.</p>
+                <p>It is enabled by setting <code>class="rta"</code> on the textarea and 
+                     making the following javascript call:
+                </p>
+<pre>
+$(document).ready(function() {
+    $.rta();
+});
+</pre>
+                <p>The code above initializes all textarea's with an 'rta' class to have the default button set.</p>
+                <p>You can initialize a specific textarea by specifying a jquery selector as shown below:</p>
+<pre>
+$(document).ready(function() {
+    $('#myTextArea').rta();
+});
+</pre>
+            </div> <!-- demo-help -->
+        </div> <!-- infoBlock -->
+    </div>
+
+    <div id="info_twoway" class="infoBlock">
+        <div class="info-block">
+            <button class="btn btn-small help-button"><i class="icon-info-sign"></i></button>
+            <div class="demo-help">
+                <p>Two way editing (disabled by default) allows HTML source to be edited in the original textarea.</p>
+                <p>Click the HTML button above to switch between HTML and WYSIWYG editing.</p>
+                <p>There are 3 ways to enable two way editing:
+                    <ol>
+                        <li>Add a <code>data-rta-twoway="true"</code> attribute to the textarea
+                        </li>
+                        <li>Pass the option as a parameter when initializing the RTA element(s) in JavaScript:
+                        <code>$.rta({ 'twoway': "true" });</code><br>
+                        </li>
+                        <li>Change the global option as follows: <code>$.rta.options.twoway = true;</code>
+                        </li>
+                    </ol>
+                </p>
+                <p><b>Note:</b> When two way editing is disabled (the default), the original textarea (containing the HTML source)
+                can still be viewed but it is marked read-only.  See the 'All Buttons' example below for read-only behavior.
+                </p>
+            </div> <!-- demo-help -->
+        </div> <!-- infoBlock -->
+    </div>
+
+    <div id="info_html" class="infoBlock">
+        <div class="info-block">
+            <button class="btn btn-small help-button"><i class="icon-info-sign"></i></button>
+            <div class="demo-help">
+                <p>The buttons for this RTA are assigned in HTML via a <code>data-rta="bold italic, ul ol"</code> attribute on the textarea.</p>
+                <p>There are two ways to specify a custom set of buttons:
+                    <ol>
+                        <li>Add a <code>data-rta"bold italic, ul ol"</code> attribute to the textarea (like this demo).
+                        </li>
+                        <li>Pass the button definition as a parameter when initializing the RTA element(s) in JavaScript:
+                        <code>$.rta('bold italic, ul ol');</code><br>
+                        </li>
+                    </ol>
+                </p>
+            </div> <!-- demo-help -->
+        </div> <!-- infoBlock -->
+    </div>
+    
+    <div id="info_allbtn" class="infoBlock">
+        <div class="info-block">
+            <button class="btn btn-small help-button"><i class="icon-info-sign"></i></button>
+            <div class="demo-help">
+                <p>This RTA shows available edit buttons. The code to accomplish this follows:</p>
+<pre>
+$(document).ready(function() {
+    $.rta($.rta.allButtons);
+});
+</pre>
+                <p>Note that there is an 'allButtons' property on the global 'rta' object that provides a
+                convenient grouping of all available buttons.</p>
+                <p>The following code shows how to add all buttons to a specific textarea whose <code>id="myTextArea"</code></p>
+<pre>
+$(document).ready(function() {
+    $('#myTextArea').rta($.rta.allButtons);
+});
+</pre>
+            </div> <!-- demo-help -->
+        </div> <!-- infoBlock -->
+    </div>
+    
+    <div id="info_small" class="infoBlock">
+        <div class="info-block">
+            <button class="btn btn-small help-button"><i class="icon-info-sign"></i></button>
+            <div class="demo-help">
+                <p>This RTA upsizes from Bootstrap 'mini' buttons to 'small' buttons.</p>
+                <p>There are 3 ways to change the button size:
+                    <ol>
+                        <li>Add a <code>data-rta-btnsize="small"</code> attribute to the textarea
+                        </li>
+                        <li>Pass the option as a parameter when initializing the RTA element(s) in JavaScript:
+                        <code>$.rta({ 'btnsize': "small" });</code><br>
+                        </li>
+                        <li>Change the global option as follows: <code>$.rta.options.btnsize = 'small';</code>
+                        </li>
+                    </ol>
+                </p>
+            </div> <!-- demo-help -->
+        </div> <!-- infoBlock -->
+    </div>
+    
+    <div id="info_plain" class="infoBlock">
+        <div class="info-block">
+            <button class="btn btn-small help-button"><i class="icon-info-sign"></i></button>
+            <div class="demo-help">
+                <p>This is a plain textarea.  This was included merely to show that you can mix RTA and plain textarea fields
+                in the same form.</p>
+            </div> <!-- demo-help -->
+        </div> <!-- infoBlock -->
+    </div>
+    
+    
+</div> <!-- hiddenContent -->
+<!---********** END hiddenContent section ********** -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="js/bootstrap-2.3.1.min.js"></script>
+<script src="js/bootstrap-rta-1.0.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+    
+        $.rta.defaultButtons += ', html'; // Useful when debugging (to view HTML)
+        
+        //$.rta(); // The simplest initialization... assigns the default button set to all textarea elements with the 'rta' class (unless a 'data-rta' attribute is defined on the textarea)
+        //$.rta('bold italic, ul ol'); // Assigns 4 buttons (in 2 groups) to all textarea elements with the 'rta' class
+        
+        $('#ta_def').rta(); // Use the default buttons
+        
+        $('#ta_twoway').rta('bold, italic, font-name font-size font-color, indent-right indent-left, ul ol, html'); // Two way editing enabled via 'data-rta-twoway="true"' attribute on the textarea
+        
+        $('#ta_html').rta(); // Buttons are defined on the textarea in a 'data-rta' attribute
+        
+        $('#ta_allbtn').rta($.rta.allButtons); // Show all supported buttons
+
+        $('#ta_small').rta({ 'btnsize': "small" }); // Upsize from 'mini' buttons to 'small', can also be accomplished via 'data-rta-btnsize="small"' attribute on the textarea
+        
+        initHelp(); // Initializes the demo 'info' help
+    });
+
+    function initHelp() {
+        $('#ta_def').after($('#info_def').html());
+        $('#ta_twoway').after($('#info_twoway').html());
+        $('#ta_html').after($('#info_html').html());
+        $('#ta_allbtn').after($('#info_allbtn').html());
+        $('#ta_small').after($('#info_small').html());
+        $('#ta_plain').after($('#info_plain').html());
+        
+        $('.help-button').click(function(event) {
+            var jbtn = $(event.target);
+            if (!jbtn.hasClass('btn')) jbtn = jbtn.closest('.btn');
+            
+            jbtn.next().toggle();
+            event.preventDefault();
+        });
+    }
+
+</script>
+</body>
+</html>
