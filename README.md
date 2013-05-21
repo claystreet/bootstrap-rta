@@ -12,12 +12,15 @@ Provides a rich text edit capability using Bootstrap styling and markup.
 
 Chosen `<textarea>` fields are replaced with `<div contenteditable="true"></div>` fields.  A configurable set of edit
 buttons provides an interface to the JavaScript `document.execCommand()` function which provides the rich text editing
-capabilities.
+capabilities.  All content entered into the `<div contenteditable="true"></div>` (the resultant source html) is copied
+back to the original `<textarea>` so it can be submitted with the form as expected.
 
-**Note:** Because the code relies on the browser's built-in `contenteditable` functionality, the level of feature
+**Notes:**
+  * Because the code relies on the browser's built-in `contenteditable` functionality, the level of feature
 support and the type of markup generated varies from browser to browser.  *However*, most browsers are pretty good
 at supporting the basic functionality such as bold and italic text and ordered and unordered lists.  Most functionality
 even works in IE7 albeit a little awkwardly sometimes.
+  * Server side code should ensure the submitted HTML is clean.
 
 ### What's needed?
 
