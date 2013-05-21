@@ -34,7 +34,7 @@
     
     <!-- *********************************************************** -->
     <!-- A typical bootstrap form... with multiple textarea fields -->
-    <form class="form-horizontal" name="steform" id="steform" method="GET" action="#">
+    <form class="form-horizontal" name="rtaform" id="rtaform" method="GET" action="#">
         <div class="control-group">
             <label class="control-label" for="ta_def">Default Buttons</label>
             <div class="controls">
@@ -216,7 +216,7 @@ $(document).ready(function() {
 <script>
     $(document).ready(function() {
     
-        $.rta.defaultButtons += ', html'; // Useful when debugging (to view HTML)
+        //$.rta.defaultButtons += ', html'; // Useful when debugging (to view HTML)
         
         //$.rta(); // The simplest initialization... assigns the default button set to all textarea elements with the 'rta' class (unless a 'data-rta' attribute is defined on the textarea)
         //$.rta('bold italic, ul ol'); // Assigns 4 buttons (in 2 groups) to all textarea elements with the 'rta' class
