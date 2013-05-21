@@ -1,6 +1,6 @@
 #Bootstrap Rich TextArea (RTA)
 
-**Provided by [Clay Street Online](http://www.claystreet.com) under an MIT-License**
+**Provided by [Clay Street Online](http://www.claystreet.com) under an MIT License**
 
 Visit the [live demo site](http://www.claystreet.com/sites/claystreet/dev/bootstrap/rta/demo.html) for an interactive demo.
 
@@ -13,18 +13,19 @@ Provides a rich text edit capability using Bootstrap styling and markup.
 Chosen `<textarea>` fields are replaced with `<div contenteditable="true"></div>` fields.  A configurable set of edit
 buttons provides an interface to the JavaScript `document.execCommand()` function which provides the rich text editing
 capabilities.  All content entered into the `<div contenteditable="true"></div>` (the resultant source html) is copied
-back to the original `<textarea>` so it can be submitted with the form as expected.
+back to the original `<textarea>` for seamless form behavior.
 
 **Notes:**
   * Because the code relies on the browser's built-in `contenteditable` functionality, the level of feature
 support and the type of markup generated varies from browser to browser.  *However*, most browsers are pretty good
-at supporting the basic functionality such as bold and italic text and ordered and unordered lists.  Most functionality
+at supporting the basic functionality such as bold and italic text and ordered and unordered lists.  Much of the functionality
 even works in IE7 albeit a little awkwardly sometimes.
   * Server side code should ensure the submitted HTML is clean.
 
 ### What's needed?
 
-Obviously this code depends on the main Bootstrap CSS file.  The Bootstrap Responsive CSS file is optional.
+Obviously this code depends on the main Bootstrap CSS file.
+The Bootstrap Responsive CSS file is optional as is the Bootstrap JS file.
 
 The RTA code also depends on JQuery.  Testing was performed with JQuery 1.9.1.
 
