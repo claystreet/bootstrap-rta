@@ -83,3 +83,50 @@ Which produces the following browser output (screenshot shown below):
 
 ![Bootstrap Rich Text Area Screenshot](http://www.claystreet.com/sites/claystreet/dev/bootstrap/rta/img/ss-simple.png)
 
+The code above displays the default set of edit buttons.  To show all available edit buttons
+change the initialization code as follows:
+
+```html
+    <script>
+        $(document).ready(function() {
+            $.rta($.rta.allButtons); // Make all edit buttons available
+        });
+    </script>
+```
+
+Which produces the following browser output (screenshot shown below):
+
+![Bootstrap Rich Text Area Screenshot](http://www.claystreet.com/sites/claystreet/dev/bootstrap/rta/img/ss-simple-all.png)
+
+A custom set of buttons can be specified by passing a simple string parameter containing the button names.
+Use commas to group the buttons.  The code below creates 7 buttons organized into 3 groups (via comma separators).
+
+```html
+    <script>
+        $(document).ready(function() {
+            $.rta('bold italic, align-left align-center align-right, link image'); // A custom set of buttons
+        });
+    </script>
+```
+
+Which produces the following browser output (screenshot shown below):
+
+![Bootstrap Rich Text Area Screenshot](http://www.claystreet.com/sites/claystreet/dev/bootstrap/rta/img/ss-simple-custom.png)
+
+CSS selectors can be used to identify particular `<textarea>` fields to initialize in a particular way.
+The code below adds a second `<textarea>` field (not shown in the code) and uses a CSS selector to target
+only `<textarea id="TextArea2">`.
+
+```html
+    <script>
+        $(document).ready(function() {
+            $('#TextArea2').rta('bold italic'); // Initialize only id="TextArea2" with the bold and italic buttons
+        });
+    </script>
+```
+
+Which produces the following browser output (screenshot shown below):
+
+![Bootstrap Rich Text Area Screenshot](http://www.claystreet.com/sites/claystreet/dev/bootstrap/rta/img/ss-simple-selector.png)
+
+Hopefully that's enough to get you started!  Enjoy!!!
