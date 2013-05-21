@@ -44,7 +44,7 @@ In addition to the dependencies, three RTA specific files are required:
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Bootstrap Rich TextArea (RTA) Demo</title>
+    <title>Bootstrap Rich TextArea</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap-2.3.1.min.css">
     <link rel="stylesheet" href="css/bootstrap-responsive-2.3.1.min.css">
@@ -52,12 +52,12 @@ In addition to the dependencies, three RTA specific files are required:
 </head>
 <body>
     <div class="container">
-        <h3>Bootstrap Rich TextArea (RTA) Demo</h3>
+        <h3>Bootstrap Rich TextArea</h3>
         <form class="form-horizontal" name="rtaform" id="rtaform" method="GET" action="#">
             <div class="control-group">
-                <label class="control-label" for="ta_def">Sample TextArea</label>
+                <label class="control-label" for="ta_sample">Sample TextArea</label>
                 <div class="controls">
-                    <textarea rows="6" cols="60" class="rta" id="ta_def" name="ta_def" placeholder="Sample TextArea"></textarea>
+                    <textarea rows="6" cols="60" class="rta" id="ta_sample" name="ta_sample" placeholder="Sample TextArea"></textarea>
                 </div> <!-- controls -->
             </div> <!-- control-group -->
         </form>
