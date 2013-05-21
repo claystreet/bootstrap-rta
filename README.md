@@ -49,6 +49,11 @@ In addition to the dependencies, three RTA specific files are required:
     <link rel="stylesheet" href="css/bootstrap-2.3.1.min.css">
     <link rel="stylesheet" href="css/bootstrap-responsive-2.3.1.min.css">
     <link rel="stylesheet" href="css/bootstrap-rta-1.0.0.min.css">
+    <style>
+        textarea {
+            width: 300px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -73,3 +78,8 @@ In addition to the dependencies, three RTA specific files are required:
 </body>
 </html>
 ```
+
+Which produces the following browser output (screenshot shown below):
+
+![Bootstrap Rich Text Area Screenshot](http://www.claystreet.com/sites/claystreet/dev/bootstrap/rta/img/ss-simple.png)
+
